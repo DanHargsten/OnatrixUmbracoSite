@@ -1,0 +1,58 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IVariationContextAccessor VariationContextAccessor
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
+    This is the home page for a standard website.
+    It also highlights the current active page/section in the navigation with the CSS class "current".
+*@
+
+
+@{
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+    var logotype = siteSettings?.SiteLogo;
+    var selection = Model.Root().Children().Where(x => x.IsVisible()).ToArray();
+}
+
+
+<header class="header">
+    <nav class="header-nav">
+        @if (logotype != null)
+        {
+            <a href="/" class="header-logo">
+                <img src="@logotype.Url()" alt="@logotype.Name" class="header-logo-image">
+            </a>
+        }
+        else
+        {
+            <a href="/" class="header-logo">
+                Onatrix
+            </a>
+        }
+        
+        @if (selection?.Length > 0)
+        {
+            <ul class="header-nav-list">
+                @foreach (var item in selection)
+                {
+                    <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null) header-nav-item">
+                        <a href="@item.Url(PublishedUrlProvider)" class="header-nav-link">@item.Name</a>
+                    </li>
+                }
+            </ul>
+        }
+
+        <div class="header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </nav>
+</header>

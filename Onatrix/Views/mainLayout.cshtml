@@ -1,0 +1,36 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var siteName = siteSettings?.SiteName ?? "Onatrix";
+    var pageTitle = Model.Level == 1 ? $"{siteName}" : $"{siteName} - {Model.Name}";
+    
+    var bodyClass = Model.Level == 1 ? "home-page" : Model.ContentType.Alias.ToLower().Replace("page", "-page");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@pageTitle</title>
+
+    @* <link rel="stylesheet" href="~/css/swiper-bundle.min.css" /> *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+	<link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body class="@bodyClass">
+
+    <partial name="Partials/Layout/_Topbar" />
+    <partial name="Partials/Layout/_Header" />
+
+    @RenderBody()
+
+    @* <script src="~/js/swiper-bundle.min.js"></script> *@
+    @* <script src="~/js/swiper.js"></script> *@
+</body>
+</html>

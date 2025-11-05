@@ -1,0 +1,57 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var contectAddress = siteSettings?.ContactAddress ?? "Ingen adress angiven";
+}
+
+<div class="topbar">
+    <div class="topbar-container">
+        <p class="topbar-address">@contectAddress</p>
+        <div class="topbar-social-media">
+            @if (siteSettings?.PlatformList != null)
+            {
+                foreach (var platform in siteSettings.PlatformList)
+                {
+                    if (platform.Content is SocialMediaItem socialMediaItem)
+                    {
+                        switch (socialMediaItem.PlatformName!.ToLower())
+                        {
+                            case "facebook":
+                                <a href="@socialMediaItem.PlatformAccountUrl" target="_blank" class="social-media-link">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                break;
+
+                            case "instagram":
+                                <a href="@socialMediaItem.PlatformAccountUrl" target="_blank" class="social-media-link">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                break;
+
+                            case "x":
+                                <a href="@socialMediaItem.PlatformAccountUrl" target="_blank" class="social-media-link">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+                                break;
+
+                            case "youtube":
+                                <a href="@socialMediaItem.PlatformAccountUrl" target="_blank" class="social-media-link">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                                break;
+
+                            case "linkedin":
+                                <a href="@socialMediaItem.PlatformAccountUrl" target="_blank" class="social-media-link">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                break;
+                        }
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>

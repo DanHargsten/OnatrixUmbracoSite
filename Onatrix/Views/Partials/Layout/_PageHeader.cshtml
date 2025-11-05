@@ -1,0 +1,47 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPageHeader>
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+    This snippet makes a breadcrumb of parents using an unordered HTML list.
+
+    How it works:
+    - It uses the Ancestors method to get all parents and then generates links so the visitor can go back
+    - Finally it outputs the name of the current page (without a link)
+*@
+
+@{
+    var selection = Model.Ancestors().ToArray();
+    var homePageDisplayName = "Home";
+    var isFirstItem = true;
+}
+
+<section class="page-header">
+    <div class="page-header-container">
+        <h1 class="page-header-title">@Model.PageTitle</h1>
+        <div class="page-header-breadcrumb-wrapper">
+            @if (selection?.Length > 0)
+            {
+                <ul class="page-header-breadcrumb">
+                    @foreach (var item in selection.OrderBy(x => x.Level))
+                    {
+                        var displayName = isFirstItem ? homePageDisplayName : item.Name;
+                        <li class="page-header-breadcrumb-item">
+                            <a href="@item.Url(PublishedUrlProvider)" class="page-header-breadcrumb-link">@displayName</a>
+                            <i class="fa-solid fa-angle-right page-header-breadcrumb-icon"></i>
+                        </li>
+                        isFirstItem = false;
+                    }
+
+                    <li class="page-header-breadcrumb-item page-header-breadcrumb-active">
+                        <p class="page-header-active">@Model.Name</p>
+                    </li>
+                </ul>
+            }
+        </div>
+    </div>
+</section>

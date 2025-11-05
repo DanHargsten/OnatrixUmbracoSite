@@ -1,0 +1,75 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ServiceSection)Model.Content;
+    var settings = Model.Settings as ServiceSettings;
+
+    var sectionColor = settings?.ServiceBackgroundColor?.Color ?? "#FFFFFF";
+    var current = Umbraco.AssignedContentItem;
+    var siteRoot = current?.Root();
+    var servicePage = siteRoot?.Children<ServicePage>()?.FirstOrDefault();
+    var items = servicePage?.Children<ServiceDetails>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
+}
+
+<section class="service-section" style="background-color: @sectionColor;">
+	<div class="service-section-container">
+        <div class="service-section-content">
+
+            @if (settings!.ShowServiceLabel)
+            {
+                <h2 class="service-section-title">@content.ServiceLabel</h2>
+            }        
+
+            <div class="service-section-text">@content.ServiceTitle</div>
+        </div>
+
+        <div class="service-section-grid">
+            @if (items.Any())
+            {
+                @foreach (var item in items) {
+                    <div class="service-section-card">
+                        <a href="@item.Url()">
+                            <h4 class="service-section-card-title">@item.Name</h4>
+                            <img src="@(item.ServiceDetailThumbnail?.Url() ?? "~/images/fallback.svg")" alt="@(item.ServiceDetailThumbnail?.Name ?? item.Name)" />
+                            <p class="service-section-card-text">@item.ServiceDetailExcerpt</p>
+                        </a>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No Services Found</p>
+            }
+        </div>
+
+        @* SWIPER CODE - COMMENTED OUT FOR FUTURE USE
+        @if (items.Any())
+        {
+        <div class="swiper service-section-swiper">
+            <div class="swiper-wrapper">
+                @foreach (var item in items) {
+                    <div class="swiper-slide service-section-card">
+                        <a href="@item.Url()">
+                            <h4 class="service-section-card-title">@item.Name</h4>
+                            <img src="@(item.ServiceDetailThumbnail?.Url() ?? "~/images/fallback.svg")" alt="@(item.ServiceDetailThumbnail?.Name ?? item.Name)" />
+                            <p class="service-section-card-text">@item.ServiceDetailExcerpt</p>
+                        </a>
+                    </div>
+                }
+            </div>
+
+            <div class="custom-pagination">
+                <div class="custom-prev">Previous</div>
+                <div class="swiper-pagination"></div>
+                <div class="custom-next">Next</div>
+            </div>
+        </div>
+        }
+        else
+        {
+            <p>No Services Found</p>
+        }
+        *@
+    </div>
+</section>
