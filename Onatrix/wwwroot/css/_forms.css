@@ -1,0 +1,91 @@
+/* ========================================
+   FORMS
+   ======================================== */
+
+/* ==========================
+   CALLBACK FORM
+   ========================== */
+.callback-form {
+    &-content {
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    &-field {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-input {
+        width: 100%;
+        padding: var(--form-input-padding);
+        font-style: italic;
+        border: 1px solid var(--clr-gray-300);
+        font-family: var(--ff-primary);
+        font-size: var(--text-rte-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+
+        &:focus {
+            outline: none;
+            border-color: var(--clr-primary);
+            box-shadow: var(--shadow-focus);
+        }
+    }
+
+    &-select {
+        &-wrapper {
+            position: relative;
+        }
+
+        appearance: none;
+        width: 100%;
+        padding: var(--form-input-padding);
+        padding-right: 2.5rem;
+        border: 1px solid var(--clr-gray-300);
+        font-family: var(--ff-primary);
+        font-size: var(--text-rte-sm);
+        background-color: var(--clr-white);
+        cursor: pointer;
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+
+        &:focus {
+            outline: none;
+            border-color: var(--clr-primary);
+            box-shadow: var(--shadow-focus);
+        }
+
+        &-icon {
+            pointer-events: none;
+            position: absolute;
+            right: var(--spacing-md);
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        &-arrow {
+            height: var(--form-select-icon-size);
+            width: var(--form-select-icon-size);
+            color: var(--clr-gray-500);
+        }
+    }
+
+    &-validation {
+        color: var(--clr-red-600);
+        font-size: var(--text-rte-xs);
+        margin-top: var(--spacing-xs);
+    }
+
+    &-submit {
+        &-wrapper {
+            padding-bottom: 2.5rem;
+        }
+
+        width: 100%;
+    }
+}
+

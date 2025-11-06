@@ -1,0 +1,36 @@
+/* ========================================
+   UTILITY COMPONENTS
+   ======================================== */
+.btn-primary {
+    padding-inline: 2.25rem;
+    padding-block: 0.9375rem;
+    background-color: var(--clr-primary);
+    border-radius: var(--btn-border-radius);
+    font-size: 1.125rem;
+    font-weight: var(--font-semibold);
+    color: var(--clr-subcolor-1);
+    transition: all var(--transition-base);
+
+    &:hover {
+        background-color: var(--clr-primary-hover);
+        box-shadow: var(--shadow-btn-hover);
+    }
+}
+
+.current {
+    color: var(--clr-subcolor-2);
+}
+
+/* Screen reader only - visually hidden but accessible */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+

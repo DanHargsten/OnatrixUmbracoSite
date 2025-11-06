@@ -1,0 +1,46 @@
+@model CallbackFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleCallbackForm", "Form", FormMethod.Post, new {novalidate = "novalidate", id = "callbackForm"}))
+{
+    <div class="callback-form-content">
+        <div class="callback-form-field">
+            <label asp-for="Name" class="sr-only">@Html.DisplayNameFor(m => m.Name)</label>
+            <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(m => m.Name)" class="callback-form-input" />
+            <span asp-validation-for="Name" class="callback-form-validation"></span>
+        </div>
+
+        <div class="callback-form-field">
+            <label asp-for="Email" class="sr-only">@Html.DisplayNameFor(m => m.Email)</label>
+            <input asp-for="Email" type="email" placeholder="@Html.DisplayNameFor(m => m.Email)" class="callback-form-input" />
+            <span asp-validation-for="Email" class="callback-form-validation"></span>
+        </div>
+
+        <div class="callback-form-field">
+            <label asp-for="Phone" class="sr-only">@Html.DisplayNameFor(m => m.Phone)</label>
+            <input asp-for="Phone" type="tel" placeholder="@Html.DisplayNameFor(m => m.Phone)" class="callback-form-input" />
+            <span asp-validation-for="Phone" class="callback-form-validation"></span>
+        </div>
+
+        <div class="callback-form-field">
+            <label asp-for="SelectedOption" class="sr-only">@Html.DisplayNameFor(m => m.SelectedOption)</label>
+            <div class="callback-form-select-wrapper">
+                <select asp-for="SelectedOption" class="callback-form-select">
+                    <option value="">Select an option</option>
+                    <option value="Financial consulting">Financial consulting</option>
+                    <option value="Business">Business</option>
+                    <option value="Tax planning">Tax planning</option>
+                </select>
+                <span class="callback-form-select-icon">
+                    <svg class="callback-form-select-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </span>
+            </div>
+            <span asp-validation-for="SelectedOption" class="callback-form-validation"></span>
+        </div>
+
+        <div class="callback-form-submit-wrapper">
+            <button type="submit" class="btn-primary callback-form-submit">Submit</button>
+        </div>
+    </div>
+}

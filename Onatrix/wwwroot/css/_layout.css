@@ -1,0 +1,102 @@
+/* ========================================
+   LAYOUT COMPONENTS
+   ======================================== */
+
+/* ==========================
+   TOPBAR
+   ========================== */
+.topbar {
+    background-color: var(--clr-topbar-bg);
+    border-bottom: 1px solid var(--clr-border);
+
+    &-container {
+        max-width: var(--container-max-width);
+        margin-inline: auto;
+        padding-inline: var(--container-padding);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-address {
+        font-size: 0.85rem;
+        color: var(--clr-white);
+    }
+
+    &-social-media {
+        display: flex;
+    }
+}
+
+.social-media-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+    font-size: var(--spacing-base);
+    color: var(--clr-white);
+    border-left: 1px solid var(--clr-border);
+    transition: background var(--transition-fast);
+
+    &:last-child {
+        border-right: 1px solid var(--clr-border);
+    }
+
+    &:hover,
+    &:focus-visible {
+        background: rgba(255, 255, 255, 0.06);
+        outline: none;
+    }
+
+    i {
+        font-size: 1.125rem;
+    }
+}
+
+/* ==========================
+   HEADER / NAVIGATION
+   ========================== */
+.header {
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    z-index: var(--z-index-header);
+
+    &-nav {
+        max-width: var(--container-max-width);
+        min-height: var(--header-height);
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: var(--container-padding);
+        padding-block: var(--spacing-base);
+
+        &-list {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-4xl);
+        }
+
+        &-link {
+            font-weight: var(--font-bold);
+            color: var(--clr-primary);
+            transition: color var(--transition-fast);
+
+            &:hover {
+                color: var(--clr-subcolor-2);
+            }
+        }
+    }
+
+    &-search {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: color var(--transition-fast);
+
+        &:hover {
+            color: var(--clr-subcolor-2);
+        }
+    }
+}
+

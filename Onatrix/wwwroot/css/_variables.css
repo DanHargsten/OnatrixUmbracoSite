@@ -1,0 +1,83 @@
+:root {
+    /* --- Fonts --- */
+    --ff-primary: 'Poppins', sans-serif;
+
+    --text-rte-xl: 4.375rem;
+    --text-rte-lg: 2.5rem;
+    --text-rte-md: 1.25rem;
+    --text-rte-sm: 1rem;
+    --text-rte-xs: 0.875rem;
+
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* --- Colors --- */
+    --clr-white: #FFFFFF;
+    --clr-white-2: #F7F7F7;
+    --clr-primary: #4F5955;
+    --clr-primary-hover: #606965;
+    --clr-primary-rgb: 79, 89, 85;
+    --clr-body-text: #535656;
+    --clr-subcolor-1: #F2EDDC;
+    --clr-subcolor-2: #D9C3A9;
+    --clr-border: #606966;
+    --clr-topbar-bg: #4F5955;
+    
+    /* Gray scale colors */
+    --clr-gray-300: #d1d5db;
+    --clr-gray-500: #6b7280;
+    --clr-red-600: #dc2626;
+
+    /* --- Layout --- */
+    --container-max-width: 1200px;
+    --container-max-width-xl: 80rem;  /* 1280px */
+    --container-padding: 1rem;
+    --header-height: 5.125rem;
+
+    /* --- Spacing --- */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 0.75rem;
+    --spacing-base: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 2.5rem;
+    --spacing-3xl: 3rem;
+    --spacing-4xl: 4rem;
+    --spacing-5xl: 7rem;
+
+    /* --- Border Radius --- */
+    --btn-border-radius: 0.2rem;
+    --border-radius-1: 0.5rem;
+    --border-radius-2: 0.75rem;
+    --border-radius-3: 1rem;
+
+    /* --- Shadows --- */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-form: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-btn-hover: 0 6px 12px rgba(79, 89, 85, 0.4);
+    --shadow-focus: 0 0 0 2px rgba(var(--clr-primary-rgb), 0.2);
+
+    /* --- Transitions --- */
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease-in-out;
+    --transition-base-ease: 200ms ease;
+
+    /* --- Z-index --- */
+    --z-index-behind: -1;
+    --z-index-base: 1;
+    --z-index-form: 99;
+    --z-index-header: 999;
+
+    /* --- Other --- */
+    --hero-min-height: 550px;
+    --service-card-image-height: 200px;
+    --form-input-padding: 0.75rem;
+    --form-select-icon-size: 1rem;
+}
+
