@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    // C# extension - krävs för IntelliSense, felmarkering och code actions (Ctrl + .)
+    // Sök efter: "C#" från Microsoft (ms-dotnettools.csharp)
+    "ms-dotnettools.csharp",
+    
+    // C# Dev Kit - nyare paket med fler funktioner (rekommenderas)
+    // Sök efter: "C# Dev Kit" från Microsoft (ms-dotnettools.csdevkit)
+    "ms-dotnettools.csdevkit",
+    
+    // .NET Runtime - krävs för att köra C# extensions
+    // Sök efter: ".NET Install Tool" från Microsoft
+    "ms-dotnettools.vscode-dotnet-runtime",
+    
+    // EditorConfig support för konsekvent kodning
+    // Sök efter: "EditorConfig for VS Code"
+    "editorconfig.editorconfig"
+  ]
+}
+

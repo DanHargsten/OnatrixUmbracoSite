@@ -17,7 +17,9 @@
 			
 			<div class="service-details-content">
 				<div class="service-details-content-inner">
-					@Model.ServiceDetailBody
+					<div class="rte">
+						@Html.Raw(Model.ServiceDetailBody)
+					</div>
 				</div>
 			</div>
 		</div>

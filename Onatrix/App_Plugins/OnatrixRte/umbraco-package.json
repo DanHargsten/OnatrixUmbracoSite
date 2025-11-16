@@ -2,168 +2,90 @@
     "name": "Onatrix Rte",
     "alias": "Onatrix.Rte",
     "extensions": [
-        {
-            "type": "tiptapToolbarExtension",
-            "kind": "styleMenu",
-            "alias": "Onatrix.Tiptap.StyleMenu",
-            "name": "Onatrix Tiptap Style Menu",
-            "meta": {
-                "alias": "OnatrixStyleMenu",
-                "icon": "icon-palette",
-                "label": "Onatrix Styles"
-            },
+      {
+        "type": "tiptapToolbarExtension",
+        "kind": "styleMenu",
+        "alias": "Onatrix.Tiptap.StyleMenu",
+        "name": "Onatrix Tiptap Style Menu",
+        "meta": { "alias": "OnatrixStyleMenu", "icon": "icon-palette", "label": "Onatrix Styles" },
+        "items": [
+          {
+            "label": "Headings",
             "items": [
-                {
-                    "label": "Paragraphs",
-                    "items": [
-                        {
-                            "label": "XL - 70",
-                            "items": [
-                                {
-                                    "label": "Light",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-xl font-light"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Normal",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-xl font-regular"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Bold",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-xl font-bold"
-                                    },
-                                    "appearance": {}
-                                }
-                            ]
-                        },
-                        {
-                            "label": "L - 40",
-                            "items": [
-                                {
-                                    "label": "Light",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-lg font-light"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Normal",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-lg font-regular"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Bold",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-lg font-bold"
-                                    },
-                                    "appearance": {}
-                                }
-                            ]
-                        },
-                        {
-                            "label": "M - 20",
-                            "items": [
-                                {
-                                    "label": "Light",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-md font-light"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Normal",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-md font-regular"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Bold",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-md font-bold"
-                                    },
-                                    "appearance": {}
-                                }
-                            ]
-                        },
-                        {
-                            "label": "S - 16",
-                            "items": [
-                                {
-                                    "label": "Light",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-sm font-light"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Normal",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-sm font-regular"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Bold",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-sm font-bold"
-                                    },
-                                    "appearance": {}
-                                }
-                            ]
-                        },
-                        {
-                            "label": "XS - 14",
-                            "items": [
-                                {
-                                    "label": "Light",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-xs font-light"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Normal",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-xs font-regular"
-                                    },
-                                    "appearance": {}
-                                },
-                                {
-                                    "label": "Bold",
-                                    "data": {
-                                        "tag": "p",
-                                        "class": "text-rte-xs font-bold"
-                                    },
-                                    "appearance": {}
-                                }
-                            ]
-                        }
-                    ]
-                }
+              { "label": "H1", "data": { "tag": "h1", "class": "rte-heading rte-h1" },
+                "appearance": { "style": "font-size:4rem;font-weight:700;line-height:1.2;margin:2rem 0 1rem" } },
+              { "label": "H2", "data": { "tag": "h2", "class": "rte-heading rte-h2" },
+                "appearance": { "style": "font-size:2.5rem;font-weight:700;line-height:1.2;margin:2rem 0 1rem" } },
+              { "label": "H3", "data": { "tag": "h3", "class": "rte-heading rte-h3" },
+                "appearance": { "style": "font-size:1.5rem;font-weight:700;line-height:1.25;margin:1.5rem 0 .75rem" } },
+              { "label": "H4", "data": { "tag": "h4", "class": "rte-heading rte-h4" },
+                "appearance": { "style": "font-size:1.125rem;font-weight:700;line-height:1.25;margin:1rem 0 .5rem" } }
             ]
-        }
+          },
+          {
+            "label": "Paragraphs",
+            "items": [
+              {
+                "label": "XL (70)",
+                "items": [
+                  { "label": "Light",  "data": { "tag": "p", "class": "text-rte-xl font-light"  }, "appearance": { "style": "font-size:4.375rem;font-weight:300;line-height:1.6;margin-bottom:1rem" } },
+                  { "label": "Normal", "data": { "tag": "p", "class": "text-rte-xl font-regular"}, "appearance": { "style": "font-size:4.375rem;font-weight:400;line-height:1.6;margin-bottom:1rem" } },
+                  { "label": "Bold",   "data": { "tag": "p", "class": "text-rte-xl font-bold"   }, "appearance": { "style": "font-size:4.375rem;font-weight:700;line-height:1.6;margin-bottom:1rem" } }
+                ]
+              },
+              {
+                "label": "L (40)",
+                "items": [
+                  { "label": "Light",  "data": { "tag": "p", "class": "text-rte-lg font-light"  }, "appearance": { "style": "font-size:2.5rem;font-weight:300;line-height:1.6;margin-bottom:1rem" } },
+                  { "label": "Normal", "data": { "tag": "p", "class": "text-rte-lg font-regular"}, "appearance": { "style": "font-size:2.5rem;font-weight:400;line-height:1.6;margin-bottom:1rem" } },
+                  { "label": "Bold",   "data": { "tag": "p", "class": "text-rte-lg font-bold"   }, "appearance": { "style": "font-size:2.5rem;font-weight:700;line-height:1.6;margin-bottom:1rem" } }
+                ]
+              },
+              {
+                "label": "M (20)",
+                "items": [
+                  { "label": "Light",  "data": { "tag": "p", "class": "text-rte-md font-light"  }, "appearance": { "style": "font-size:1.25rem;font-weight:300;line-height:1.7;margin-bottom:1rem" } },
+                  { "label": "Normal", "data": { "tag": "p", "class": "text-rte-md font-regular"}, "appearance": { "style": "font-size:1.25rem;font-weight:400;line-height:1.7;margin-bottom:1rem" } },
+                  { "label": "Bold",   "data": { "tag": "p", "class": "text-rte-md font-bold"   }, "appearance": { "style": "font-size:1.25rem;font-weight:700;line-height:1.7;margin-bottom:1rem" } }
+                ]
+              },
+              {
+                "label": "S (16)",
+                "items": [
+                  { "label": "Light",  "data": { "tag": "p", "class": "text-rte-sm font-light"  }, "appearance": { "style": "font-size:1rem;font-weight:300;line-height:1.7;margin-bottom:.75rem" } },
+                  { "label": "Normal", "data": { "tag": "p", "class": "text-rte-sm font-regular"}, "appearance": { "style": "font-size:1rem;font-weight:400;line-height:1.7;margin-bottom:.75rem" } },
+                  { "label": "Bold",   "data": { "tag": "p", "class": "text-rte-sm font-bold"   }, "appearance": { "style": "font-size:1rem;font-weight:700;line-height:1.7;margin-bottom:.75rem" } }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "Bullets",
+            "data": { "tag": "ul", "class": "rte-ul" },
+            "appearance": { "style": "list-style:disc;padding-left:2rem;margin:.75rem 0" }
+          },
+          {
+            "label": "Images",
+            "items": [
+              { "label": "Max width",     "data": { "tag": "img", "class": "rte-img--fluid"     }, "appearance": { "style": "display:block;width:100%;height:auto" } },
+              { "label": "Original size", "data": { "tag": "img", "class": "rte-img--intrinsic" }, "appearance": { "style": "display:inline-block" } }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "tiptapToolbarExtension",
+        "kind": "styleMenu",
+        "alias": "Onatrix.Tiptap.ColorMenu",
+        "name": "Onatrix Tiptap Color Menu",
+        "meta": { "alias": "OnatrixColorMenu", "icon": "icon-palette", "label": "Onatrix Colors" },
+        "items": [
+          { "label": "Primary",     "data": { "tag": "span", "class": "text-primary"     }, "appearance": { "style": "background:#4F5955;color:#fff;padding:2px 6px;border-radius:3px;display:inline-block" } },
+          { "label": "Secondary",   "data": { "tag": "span", "class": "text-secondary"   }, "appearance": { "style": "background:#D9C3A9;color:#4F5955;padding:2px 6px;border-radius:3px;display:inline-block" } },
+          { "label": "Body",        "data": { "tag": "span", "class": "text-body-text"   }, "appearance": { "style": "background:#535656;color:#fff;padding:2px 6px;border-radius:3px;display:inline-block" } },
+          { "label": "Body Light",  "data": { "tag": "span", "class": "text-body-light"  }, "appearance": { "style": "background:#F7F7F7;color:#535656;padding:2px 6px;border-radius:3px;display:inline-block;border:1px solid #d1d5db" } }
+        ]
+      }
     ]
-}
+  }
+  
