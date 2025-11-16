@@ -1,0 +1,89 @@
+{
+  // Förbättrad felmarkering och IntelliSense för C#
+  "editor.errorSquiggles": "on",
+  "editor.semanticHighlighting.enabled": true,
+  
+  // C# specifika inställningar
+  "csharp.inlayHints.enableInlayHintsForTypes": true,
+  "csharp.inlayHints.enableInlayHintsForParameters": true,
+  "csharp.inlayHints.enableInlayHintsForLiteralParameters": true,
+  "csharp.inlayHints.enableInlayHintsForIndexerParameters": true,
+  "csharp.inlayHints.enableInlayHintsForObjectCreationParameters": true,
+  "csharp.inlayHints.enableInlayHintsForOtherParameters": true,
+  "csharp.inlayHints.suppressInlayHintsForParametersThatDifferOnlyBySuffix": true,
+  "csharp.inlayHints.suppressInlayHintsForParametersThatMatchMethodIntent": true,
+  "csharp.inlayHints.suppressInlayHintsForParametersThatMatchArgumentName": true,
+  
+  // OmniSharp/Roslyn inställningar för bättre analys
+  "omnisharp.enableRoslynAnalyzers": true,
+  "omnisharp.enableEditorConfigSupport": true,
+  "omnisharp.enableImportCompletion": true,
+  "omnisharp.enableAsyncCompletion": true,
+  "omnisharp.organizeImportsOnFormat": true,
+  "omnisharp.enableDecompilationSupport": true,
+  
+  // Editor inställningar för bättre förslag och code actions
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.tabCompletion": "on",
+  "editor.wordBasedSuggestions": "allDocuments",
+  "editor.suggestSelection": "first",
+  "editor.snippetSuggestions": "top",
+  
+  // Code actions (Ctrl + . funktionalitet)
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.codeActionsOnSaveTimeout": 2000,
+  
+  // Problemlösning - visa fel tydligt
+  "problems.showCurrentInStatus": true,
+  "problems.decorations.enabled": true,
+  
+  // Förbättrad syntax highlighting
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.highlightActiveIndentation": true,
+  
+  // IntelliSense förbättringar
+  "editor.suggest.preview": true,
+  "editor.suggest.showStatusBar": true,
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.shareSuggestSelections": true,
+  
+  // Filtyper specifika inställningar
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  
+  // .NET specifika inställningar
+  "dotnet.server.useOmnisharp": false,
+  "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+  
+  // Aktivera code actions explicit
+  "editor.codeActions.enabled": true,
+  "editor.codeActions.survey.enabled": false,
+  
+  // Förbättrad felvisning i Problems-panelen
+  "problems.sortOrder": "severity",
+  
+  // Se till att solution-filen laddas
+  "files.exclude": {
+    "**/bin": false,
+    "**/obj": false
+  }
+}
+

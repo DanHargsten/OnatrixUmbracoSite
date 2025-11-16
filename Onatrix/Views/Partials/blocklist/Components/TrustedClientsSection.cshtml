@@ -1,0 +1,38 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    if (Model?.Content == null) { return; }
+    var content = (TrustedClientsSection)Model.Content;
+}
+
+<section class="trusted-clients-section">
+    @if (content.TrustedClientsBackground != null)
+    {
+        <div class="trusted-clients-section-background" role="img" aria-label="Trusted clients background image">
+            <img src="@content.TrustedClientsBackground.Url()" alt="@(string.IsNullOrWhiteSpace(content.TrustedClientsBackground.Name) ? "Trusted clients background" : content.TrustedClientsBackground.Name)" />
+        </div>
+    }
+    <div class="trusted-clients-section-container">
+        <div class="trusted-clients-section-content">
+            @if (content.TrustedClientsTitle != null && !string.IsNullOrWhiteSpace(content.TrustedClientsTitle.ToHtmlString()))
+            {
+                <h2 class="trusted-clients-section-title">@content.TrustedClientsTitle</h2>
+            }
+            @if (content.TrustedClientsText != null && !string.IsNullOrWhiteSpace(content.TrustedClientsText.ToHtmlString()))
+            {
+                <div class="trusted-clients-section-text">@content.TrustedClientsText</div>
+            }
+            @if (content.TrustedClientsLink != null)
+            {
+                <a class="trusted-clients-section-link btn-primary" href="@content.TrustedClientsLink.Url">@content.TrustedClientsLink.Name</a>
+            }
+        </div>
+        @if (content.TrustedClientsForeground != null)
+        {
+            <div class="trusted-clients-section-foreground" role="img" aria-label="Trusted clients foreground image">
+                <img src="@content.TrustedClientsForeground.Url()" alt="@(string.IsNullOrWhiteSpace(content.TrustedClientsForeground.Name) ? "Trusted clients foreground" : content.TrustedClientsForeground.Name)" />
+            </div>
+        }
+    </div>
+</section>

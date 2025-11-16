@@ -26,9 +26,12 @@
             <div class="callback-form-select-wrapper">
                 <select asp-for="SelectedOption" class="callback-form-select">
                     <option value="">Select an option</option>
-                    <option value="Financial consulting">Financial consulting</option>
-                    <option value="Business">Business</option>
-                    <option value="Tax planning">Tax planning</option>
+                    
+                    @foreach (var option in Model.Options)
+                    {
+                        <option value="@option">@option</option>
+                    }
+
                 </select>
                 <span class="callback-form-select-icon">
                     <svg class="callback-form-select-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -40,7 +43,7 @@
         </div>
 
         <div class="callback-form-submit-wrapper">
-            <button type="submit" class="btn-primary callback-form-submit">Submit</button>
+            <button type="submit" class="form-btn callback-form-submit">Submit</button>
         </div>
     </div>
 }

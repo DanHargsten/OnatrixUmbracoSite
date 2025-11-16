@@ -10,18 +10,18 @@
     font-weight: var(--font-semibold);
     color: var(--clr-subcolor-1);
     transition: all var(--transition-base);
+}
 
-    &:hover {
-        background-color: var(--clr-primary-hover);
-        box-shadow: var(--shadow-btn-hover);
-    }
+.btn-primary:hover {
+    background-color: var(--clr-primary-hover);
+    box-shadow: var(--shadow-btn-hover);
 }
 
 .current {
     color: var(--clr-subcolor-2);
 }
 
-/* Screen reader only - visually hidden but accessible */
+/* Screen reader only */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -33,4 +33,3 @@
     white-space: nowrap;
     border-width: 0;
 }
-

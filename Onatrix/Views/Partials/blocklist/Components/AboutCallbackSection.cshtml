@@ -1,8 +1,15 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
 @using Umbraco.Cms.Web.Common.PublishedModels;
+@using Onatrix.ViewModels;
 
 @{
     var content = (AboutCallbackSection)Model.Content;
+    var settings = Model.Settings as AboutCallbackSettings;
+
+    var formViewModel = new CallbackFormViewModel 
+    {
+        Options = settings?.CallbackRequestOptions ?? []
+    };
 }
 
 <section class="about-callback-section">
@@ -22,16 +29,14 @@
                 {
                     <p class="about-callback-form-title">@content.AboutCallbackFormTitle</p>
                 }
-                
-                @if (!string.IsNullOrWhiteSpace(content.AboutCallbackFormDescription))
-                {
-                    <p class="about-callback-form-description">@content.AboutCallbackFormDescription</p>
-                }
             </div>
+            
+            @if (!string.IsNullOrWhiteSpace(content.AboutCallbackFormDescription))
+            {
+                <p class="about-callback-form-description">@content.AboutCallbackFormDescription</p>
+            }
 
-            <div class="about-callback-form">
-                @await Html.PartialAsync("~/Views/Partials/Forms/_CallbackForm.cshtml", new Onatrix.ViewModels.CallbackFormViewModel())
-            </div>
+            <partial name="Partials/Forms/_CallbackForm" model="formViewModel" />
         </div>
     </div>
 </section>
