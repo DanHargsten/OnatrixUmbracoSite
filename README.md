@@ -1,3 +1,5 @@
 Umbraco login
-admin@email.com
-Bytmig123!
+
+Email: admin@email.com
+
+Password: Bytmig123!
